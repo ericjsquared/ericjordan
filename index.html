@@ -10,11 +10,23 @@
   <header class="site-header">
     <div class="container header-layout">
       <a class="brand" href="#">Eric Jordan</a>
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="site-nav">
         <a href="projects.html">Projects</a>
         <a href="#about">About</a>
       </nav>
     </div>
+    <div class="mobile-menu-backdrop"></div>
+    <nav class="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="#about">About</a>
+      <a href="resume.html">Resume</a>
+    </nav>
   </header>
 
   <main>
@@ -98,5 +110,6 @@
       <p>Thanks for visiting.</p>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
