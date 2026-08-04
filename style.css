@@ -135,6 +135,33 @@ body::before {
   padding: 0.4rem 0;
 }
 
+.mobile-menu .linkedin-button,
+.mobile-menu .github-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.16);
+  border: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.mobile-menu .linkedin-button img,
+.mobile-menu .github-button img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.mobile-menu .social-links-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
 body.menu-open {
   overflow: hidden;
 }
@@ -347,6 +374,10 @@ p {
   padding: 1.5rem;
   border-radius: 1.1rem;
   margin-top: 1rem;
+}
+
+.resume-page a {
+  color: #ffffff;
 }
 
 @media (max-width: 760px) {
