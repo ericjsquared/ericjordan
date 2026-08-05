@@ -32,7 +32,7 @@ body::before {
 }
 
 .container {
-  width: min(1250px, 92%);
+  width: min(1200px, 96%);
   margin: 0 auto;
 }
 
@@ -184,7 +184,7 @@ body.menu-open {
 }
 
 .hero-copy {
-  max-width: 720px;
+  flex: 1;
 }
 
 .eyebrow {
@@ -221,7 +221,6 @@ p {
   flex-wrap: nowrap;
   gap: 0.8rem;
   margin-top: 1.4rem;
-  overflow-x: auto;
 }
 
 .button {
@@ -317,6 +316,81 @@ p {
   padding: 1.3rem;
   border-radius: 1.1rem;
   min-width: 260px;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about-card {
+  background: #334155;
+  border: 1px solid var(--border);
+  box-shadow: 0 14px 34px rgba(2, 8, 23, 0.4);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  border-radius: 1.1rem;
+  /* remove default <details> marker */
+  list-style: none;
+}
+
+/* The clickable title row */
+.about-card summary {
+  padding: 1.2rem 1.8rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+/* Arrow indicator */
+.about-card summary::after {
+  content: "▸";
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.about-card[open] summary::after {
+  transform: rotate(90deg);
+}
+
+/* Expanded body — max-height is driven by JS for the slide animation */
+.about-card-body {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 1.8rem;
+  border-top: 1px solid var(--border);
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.about-card[open] .about-card-body {
+  padding: 0 1.8rem 1.4rem;
+}
+
+/* Indented paragraphs separated by a line */
+.about-card-body p {
+  font-size: 1.05rem;
+  text-indent: 1.5em;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-card-body p:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
 }
 
 .about-panel ul {

@@ -1,3 +1,31 @@
+/* Animate each about-card accordion with a max-height slide */
+document.querySelectorAll('.about-card').forEach((card) => {
+  const summary = card.querySelector('summary');
+  const body = card.querySelector('.about-card-body');
+  if (!summary || !body) return;
+
+  summary.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (card.open) {
+      /* Slide up */
+      body.style.maxHeight = body.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        body.style.maxHeight = '0';
+      });
+      body.addEventListener('transitionend', () => {
+        card.removeAttribute('open');
+      }, { once: true });
+    } else {
+      /* Slide down */
+      card.setAttribute('open', '');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.addEventListener('transitionend', () => {
+        body.style.maxHeight = 'none';
+      }, { once: true });
+    }
+  });
+});
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileBackdrop = document.querySelector('.mobile-menu-backdrop');
