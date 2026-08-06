@@ -1,4 +1,4 @@
-/* Animate each about-card accordion with a max-height slide */
+/* Animate each about-card accordion with a smooth vertical expansion */
 document.querySelectorAll('.about-card').forEach((card) => {
   const summary = card.querySelector('summary');
   const body = card.querySelector('.about-card-body');
@@ -6,8 +6,8 @@ document.querySelectorAll('.about-card').forEach((card) => {
 
   summary.addEventListener('click', (e) => {
     e.preventDefault();
+
     if (card.open) {
-      /* Slide up */
       body.style.maxHeight = body.scrollHeight + 'px';
       requestAnimationFrame(() => {
         body.style.maxHeight = '0';
@@ -16,7 +16,6 @@ document.querySelectorAll('.about-card').forEach((card) => {
         card.removeAttribute('open');
       }, { once: true });
     } else {
-      /* Slide down */
       card.setAttribute('open', '');
       body.style.maxHeight = body.scrollHeight + 'px';
       body.addEventListener('transitionend', () => {
