@@ -531,6 +531,20 @@ p {
     max-width: 180px;
     height: 180px;
   }
+
+  .about-card,
+  .about-card:not([open]) {
+    margin-bottom: 2rem;
+  }
+  .about-card,
+  .about-card[open] {
+    width: 90%;
+    max-width: 90%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
